@@ -1,0 +1,7 @@
+{
+  "name": "ppsapp02",
+  "integrations": {
+    "capacitor": {}
+  },
+  "type": "angular-standalone"
+}
