@@ -1,0 +1,100 @@
+<ion-footer [translucent]="true">
+  <ion-toolbar color="primary">
+    @if(this.authService.currentUserSig() == null)
+    {
+      <ion-buttons slot="end">
+      <ion-button (click)="goLogin()"> Ingresar </ion-button>
+      <ion-button (click)="goRegister()"> Registrarse </ion-button>
+      </ion-buttons>
+    }
+    @if(this.authService.currentUserSig())
+    {
+      <ion-buttons slot="start">
+      <ion-button (click)="logout()"> <img src="../../../assets/salir.png" alt="" class="logout-image"> </ion-button>
+      </ion-buttons>
+    }
+  </ion-toolbar>
+</ion-footer>
+
+<ion-content [fullscreen]="true">
+  @if(this.authService.currentUserSig())
+  {
+    @defer
+    {
+      <ion-grid>
+        <ion-row>
+          @if(tipo == "animales"){ @for (animal of animales; track animal.pathFoto)
+          {
+          <ion-col
+            (click)="Reproducir(animal)"
+            size="6"
+            size-sm="4"
+            [ngStyle]="{ 'background': animal.colorBoton }"
+          >
+            <img src="{{animal.pathFoto}}" alt=""
+          /></ion-col>
+          } } @if(tipo == "colores"){ @for (color of colores; track color.pathFoto)
+          {
+          <ion-col
+            (click)="Reproducir(color)"
+            size="6"
+            size-sm="4"
+            [ngStyle]="{ 'background': color.colorBoton }"
+          >
+            <img src="{{color.pathFoto}}" alt=""
+          /></ion-col>
+          } } @if(tipo == "numeros"){ @for (numero of numeros; track
+          numero.pathFoto) {
+          <ion-col
+            (click)="Reproducir(numero)"
+            size="6"
+            size-sm="4"
+            [ngStyle]="{ 'background': numero.colorBoton }"
+          >
+            <img src="{{numero.pathFoto}}" alt=""
+          /></ion-col>
+          } }
+        </ion-row>
+      </ion-grid>
+      <!-- Contenido Botones -->
+      <ion-fab slot="fixed" vertical="bottom" horizontal="end">
+        <ion-fab-button>
+          <img src="{{getImgTipo()}}" width="30px" alt="idiomas" />
+        </ion-fab-button>
+        <ion-fab-list side="top">
+          <ion-fab-button (click)="cambiarTipo('animales')" color="warning">
+            <img src="../../../assets/animales.png" width="36px" alt="idiomas" />
+          </ion-fab-button>
+          <ion-fab-button (click)="cambiarTipo('colores')" color="favorite">
+            <img src="../../../assets/paleta.png" width="36px" alt="idiomas" />
+          </ion-fab-button>
+          <ion-fab-button (click)="cambiarTipo('numeros')" color="tertiary">
+            <img src="../../../assets/numeros.png" width="36px" alt="idiomas" />
+          </ion-fab-button>
+        </ion-fab-list>
+      </ion-fab>
+      <ion-fab slot="fixed" vertical="top" horizontal="start">
+        <ion-fab-button>
+          <img src="{{getImgIdioma()}}" width="36px" alt="idiomas" />
+        </ion-fab-button>
+        <ion-fab-list side="bottom">
+          <ion-fab-button (click)="cambiarIdioma('español')" color="warning">
+            <img src="../../../assets/español.png" width="36px" alt="idiomas"/>
+          </ion-fab-button>
+          <ion-fab-button (click)="cambiarIdioma('ingles')" color="favorite">
+            <img src="../../../assets/ingles.png" width="36px" alt="idiomas"/>
+          </ion-fab-button>
+          <ion-fab-button (click)="cambiarIdioma('portugues')" color="tertiary">
+            <img src="../../../assets/portugues.png" width="36px" alt="idiomas" />
+          </ion-fab-button>
+        </ion-fab-list>
+      </ion-fab>
+    }@placeholder {
+      <ion-spinner class="spinner" color="danger"></ion-spinner>
+    } @loading (minimum 2s) {
+      <ion-spinner class="spinner" color="danger"></ion-spinner>  
+    }
+
+    
+  }
+</ion-content>

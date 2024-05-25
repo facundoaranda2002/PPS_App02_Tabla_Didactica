@@ -1,0 +1,19 @@
+.h1-register{
+    color: antiquewhite;
+    margin-top: 20%;
+}
+
+.gif-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 16px;
+
+  }
+  
+  .responsive-gif {
+    max-width: 100%;
+    height: auto;
+    border-radius: 20px; /* Redondea las esquinas */
+  border: 5px solid #ffcc00; /* Agrega un borde con color */
+  }

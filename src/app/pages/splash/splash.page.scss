@@ -1,0 +1,58 @@
+@-webkit-keyframes text-blur-out{0%{-webkit-filter:blur(.01);filter:blur(.01)}100%{-webkit-filter:blur(12px) opacity(0);filter:blur(12px) opacity(0)}}@keyframes text-blur-out{0%{-webkit-filter:blur(.01);filter:blur(.01)}100%{-webkit-filter:blur(12px) opacity(0);filter:blur(12px) opacity(0)}}
+
+@-webkit-keyframes flip-horizontal-bottom{0%{-webkit-transform:rotateX(0);transform:rotateX(0)}100%{-webkit-transform:rotateX(-180deg);transform:rotateX(-180deg)}}@keyframes flip-horizontal-bottom{0%{-webkit-transform:rotateX(0);transform:rotateX(0)}100%{-webkit-transform:rotateX(-180deg);transform:rotateX(-180deg)}}
+
+
+ion-content {
+  --background: #fbcb11;
+}
+.contenedor {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  height: 100%;
+  width: 100%;
+  img {
+    width: 200px;
+    -webkit-animation:flip-horizontal-bottom 1s cubic-bezier(.165,.84,.44,1.000) 2.5s both;
+    animation:flip-horizontal-bottom 1s cubic-bezier(.165,.84,.44,1.000) 2.5s both;
+  }
+  p {
+    color: #044FB6;
+  }
+  .text1 {
+    padding: 0;
+    margin: 0;
+    -webkit-animation: text-blur-out 1.5s cubic-bezier(0.550, 0.085, 0.680, 0.530) 1s both;
+    animation: text-blur-out 1.5s cubic-bezier(0.550, 0.085, 0.680, 0.530) 1s both;
+    position: absolute;
+    //right: 80px;
+    bottom: 550px;
+    font-size: 40px;
+    font-weight: 600;
+  }
+  .text2 {
+    padding: 0;
+    margin: 0;
+    -webkit-animation: text-blur-out 1.5s cubic-bezier(0.550, 0.085, 0.680, 0.530) 1s both;
+    animation: text-blur-out 1.5s cubic-bezier(0.550, 0.085, 0.680, 0.530) 1s both;
+    position: absolute;
+    //left: 80px;
+    top: 600px;
+    font-size: 35px;
+    font-weight: 600;
+  }
+  .text3 {
+    padding: 0;
+    margin: 0;
+    -webkit-animation: text-blur-out 1.5s cubic-bezier(0.550, 0.085, 0.680, 0.530) 1s both;
+    animation: text-blur-out 1.5s cubic-bezier(0.550, 0.085, 0.680, 0.530) 1s both;
+    position: absolute;
+    //left: 80px;
+    top: 650px;
+    font-size: 35px;
+    font-weight: 600;
+  }
+}

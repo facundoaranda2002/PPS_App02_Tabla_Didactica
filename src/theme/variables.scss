@@ -1,2 +1,91 @@
 // For information on how to create your own theme, please see:
 // http://ionicframework.com/docs/theming/
+
+
+:root {
+    --ion-color-primary: #fc8f01;
+    --ion-color-primary-rgb: 72,138,255;
+    --ion-color-primary-contrast: #fff;
+    --ion-color-primary-contrast-rgb: 255,255,255;
+    --ion-color-primary-shade: #3f79e0;
+    --ion-color-primary-tint: #5a96ff;
+
+    --ion-color-secondary: #fc8f01;
+    --ion-color-secondary-rgb: 0, 102, 0;
+    --ion-color-secondary-contrast: #ffffff;
+    --ion-color-secondary-contrast-rgb: 255, 255, 255;
+    --ion-color-secondary-shade: #005a00;
+    --ion-color-secondary-tint: #1a751a;
+
+    --ion-color-favorite: #044FB6;
+    --ion-color-favorite-rgb: 105, 187, 123;
+    --ion-color-favorite-contrast: #ffffff;
+    --ion-color-favorite-contrast-rgb: 255, 255, 255;
+    --ion-color-favorite-shade: #5ca56c;
+    --ion-color-favorite-tint: #78c288;
+
+    --ion-color-tertiary: #d81d1d;
+
+    --ion-color-warning: #e0ec30;
+  }
+
+
+  .ion-color-favorite {
+    --ion-color-base: var(--ion-color-favorite);
+    --ion-color-base-rgb: var(--ion-color-favorite-rgb);
+    --ion-color-contrast: var(--ion-color-favorite-contrast);
+    --ion-color-contrast-rgb: var(--ion-color-favorite-contrast-rgb);
+    --ion-color-shade: var(--ion-color-favorite-shade);
+    --ion-color-tint: var(--ion-color-favorite-tint);
+  }
+
+  ion-content{
+    --background: var(--ion-color-favorite);
+  }
+
+  #form {
+    max-width: 400px;
+    margin: 0 auto;
+    padding: 20px;
+    background-color: #f4f4f4;
+    border-radius: 10px;
+    margin-top: 10%;
+
+    color: #28a745; /* Color verde */
+  }
+  
+  h1 {
+    text-align: center;
+    margin-bottom: 20px;
+    
+    color: #28a745; /* Color verde */
+  }
+  
+  ion-item {
+    margin-bottom: 15px;
+  }
+  
+  ion-button {
+    margin-top: 15px;
+  }
+  
+  /* Estilos para los botones de usuarios pre registrados */
+  h2 {
+    text-align: center;
+    margin-top: 20%;
+    
+    color: #cce7cf; /* Color verde */
+  }
+  
+  .user-buttons-container {
+    display: flex;
+    justify-content: center;
+    margin-top: 20px;
+  }
+  
+  .user-button {
+    margin: 0 10px;
+    border: 2px solid #a06211; /* Color del borde */
+    border-radius: 20px; /* Radio del borde */
+    color: #28a745; /* Color del texto */
+  }

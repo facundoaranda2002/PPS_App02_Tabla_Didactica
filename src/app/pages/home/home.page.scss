@@ -1,0 +1,68 @@
+ion-content {
+    
+  
+    h1 {
+      font-weight: 700;
+      font-size: 26px;
+      color: #010100;
+      margin-bottom: 15%;
+      margin-top: 15%;
+      text-align: center;
+    }
+    ion-grid {
+      ion-row {
+        ion-col {
+          display: flex;
+          justify-content: center;
+          align-items: center;
+          background-color: #9E835C;
+          border: solid 1px #000000;
+          color: #000000;
+          text-align: center;
+          border-radius: 10px;
+        }
+        ion-col:active {
+          scale: (0.95);
+        }
+      }
+    }
+  }
+  
+  @media screen and (orientation: portrait) and (max-width: 600px) {
+    ion-content {
+      ion-row {
+        ion-col {
+          height: 30.7vh;
+          img {
+            height: 100%;
+          }
+        }
+      }
+    }
+  }
+  
+  /* Estilos para pantalla horizontal con ancho mayor a 600px */
+  @media screen and (orientation: landscape) and (min-width: 601px) {
+    ion-content {
+      ion-row {
+        ion-col {
+          height: 40vh;
+          img {
+            height: 100%;
+          }
+        }
+      }
+    }
+  }
+
+  .logout-image {
+    max-height: 50px; /* Ajusta este valor según sea necesario */
+    max-width: 100px; /* Asegura que la imagen mantenga su proporción */
+  }
+
+  .spinner
+  {
+    position: absolute;   top: 50%;   left: 50%;   transform: translate(-50%, -50%);
+    width: 80px;
+    height: 80px;
+  }

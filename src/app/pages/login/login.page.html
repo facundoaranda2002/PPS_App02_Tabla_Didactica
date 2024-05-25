@@ -1,0 +1,33 @@
+<ion-footer [translucent]="true">
+  <ion-toolbar color="primary">
+    <ion-buttons slot="end">
+    <ion-button (click)="goRegister()"> Registrarse </ion-button>
+     </ion-buttons>
+  </ion-toolbar>
+</ion-footer>
+
+<ion-content [fullscreen]="true" class="content-container">
+  <h2>Usuarios pre registrados</h2>
+  <div class="user-buttons-container">
+  <ion-button color="secondary" (click)="userA()" class="user-button"><img src="../../../assets/persona.png" alt="" class="logout-image"> </ion-button>
+  <ion-button color="tertiary" (click)="userB()" class="user-button"><img src="../../../assets/persona.png" alt="" class="logout-image"></ion-button>
+  <ion-button color="warning" (click)="userC()" class="user-button"><img src="../../../assets/persona.png" alt="" class="logout-image"></ion-button>
+  </div> 
+  <div class="user-labels">
+    <ion-label>Usuario 1</ion-label>
+    <ion-label>Usuario 2</ion-label>
+    <ion-label>Usuario 3</ion-label>
+  </div> 
+  
+  <form id="form" [formGroup]="form" (ngSubmit)="onSubmit()">
+    <h1>Ingresa a tu cuenta</h1>
+      <ion-item color="primary">
+        <ion-input type="email" label="Correo Electrónico" placeholder="Ingrese el correo electrónico" formControlName="email"></ion-input>
+      </ion-item>
+      <ion-item color="primary">
+        <ion-input type="password" label="Contraseña" placeholder="Ingrese la contraseña" formControlName="password"></ion-input>
+      </ion-item>
+      <ion-button type="submit" expand="block" shape="round" class="submit-but">Ingresar</ion-button>
+      <ion-toast color="danger" [isOpen]="isToastOpen" position="top" message="Correo o contraseña incorrectos" [duration]="3000" (didDismiss)="setOpen(false)"></ion-toast>
+  </form>
+</ion-content>

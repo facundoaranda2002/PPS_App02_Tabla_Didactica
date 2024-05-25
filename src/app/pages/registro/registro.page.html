@@ -1,0 +1,29 @@
+<ion-footer [translucent]="true">
+  <ion-toolbar color="primary">
+   <ion-buttons slot="end">
+    <ion-button (click)="goLogin()"> Ingresar </ion-button>
+   </ion-buttons>
+  </ion-toolbar>
+</ion-footer>
+
+<ion-content [fullscreen]="true">
+  <h1 class="h1-register">Crea tu Cuenta</h1>
+  <form id="form" [formGroup]="form" (ngSubmit)="onSubmit()">
+    <ion-item color="primary">
+      <ion-input type="text" label="Usuario" placeholder="Ingresa el nombre de usuario" formControlName="username"></ion-input>
+    </ion-item>
+    <ion-item color="primary">
+      <ion-input type="email" label="Correo Electrónico" placeholder="Ingrese el correo electrónico" formControlName="email"></ion-input>
+    </ion-item>
+    <ion-item color="primary">
+      <ion-input type="password" label="Contraseña" placeholder="Ingresa la contraseña" formControlName="password"></ion-input>
+    </ion-item>
+    <ion-button type="submit" expand="block" shape="round">Registrarse</ion-button>
+    <ion-toast color="danger" [isOpen]="isToastOpen" position="top" message="Correo o contraseña invalidas" [duration]="3000" (didDismiss)="setOpen(false)"></ion-toast>
+  </form>
+
+  <div class="gif-container">
+    <img src="../../../assets/firma.gif" alt="Firma" class="responsive-gif"/>
+  </div>
+
+</ion-content>
